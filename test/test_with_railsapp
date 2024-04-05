@@ -710,7 +710,7 @@ case "$run_test" in
     expected_status=404,500,502
     $testurl ${host}/another/url $expected_status
 
-    echo 'TESTING default route has been overriden ...'
+    echo 'TESTING default route has been overridden ...'
     expected_status=404,500,502
     $testurl ${host}/health_check/site $expected_status
 

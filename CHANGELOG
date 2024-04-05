@@ -19,7 +19,7 @@
   * Merged PR get rid of old school hash rockets syntax #92 from DmytroStepaniuk
   * Merged PR Converted whitelist testing to use IPAddr objects. #64 jordanyaker
   * Added on_success and on_failure callbacks
-  * Makes sure errors are seperated by a period and a space and a period always ends the list of errors
+  * Makes sure errors are separated by a period and a space and a period always ends the list of errors
 
 * 3.0.0
  * First release on rails5 branch
@@ -28,9 +28,9 @@
  * Cleaned up README
  * redis_url now defaults to nil (url determined by redis gem)
  * Cleaned out rails 4.0 dependent code
- * Cleaned up test code and updated to rails 5 standards, uses smarter_bundler to handle gem ruby version isssues
+ * Cleaned up test code and updated to rails 5 standards, uses smarter_bundler to handle gem ruby version issues
  * Added rails 5.1 test
- * Split all releases to this rails* branchs - master is only for edge development
+ * Split all releases to this rails* branches - master is only for edge development
 
 * 2.7.0
  * Add ability to check health of redis when url is non-standard redis url
@@ -56,7 +56,7 @@
  * Fix route reload issue
  * Various fixes to get tests working with bundle/jruby and other gem issues
  * Document additional branches
- * Fix route reload issue (auto routing previosuly conflicted with devise)
+ * Fix route reload issue (auto routing previously conflicted with devise)
  * Removed ref to rails 2.3, 3.*
 
 * 2.2.1
@@ -82,13 +82,13 @@
   * Uses ActiveRecord::Migration.check_pending! if available and returns the message if an exception is raised (Rails 4.0+)
   * Simplified routing rules down to one rule for Rails 3.0+
   * Includes some changes for rails 4.1 (edge) - but still a work in progress
-* 1.3.1 - Include changes from contributers:
+* 1.3.1 - Include changes from contributors:
   * Migrations with dots are now handled
   * the list of checks for "full" / "all" can be configured
 * 1.2.0 - The gem can now be configured, including timeouts, status codes and text returned on success
-        - Customn checks can be added via initializer like config.add_custom_check { CustomCheckClass.a_custom_check }
+        - Custom checks can be added via initializer like config.add_custom_check { CustomCheckClass.a_custom_check }
 	- You can now request the response to be json or xml (via url or Content-accepted header)
-	- reduced tests to the versions of ruby recomended for the different versions of rails
+	- reduced tests to the versions of ruby recommended for the different versions of rails
 * 1.1.2 - Change to bundler support for building gems, as jeweler gem was broken by v2.0.0 of rubygems
 * 1.1.0 - Include cache check (Thanks to https://github.com/mgomes1 ) and some changes to test setup to workaround and diagnose test failures under rvm
 * 1.0.2 - Included travis config and gemfiles used in travis tests in gem and changes to test setup so that gem test 

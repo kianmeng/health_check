@@ -12,11 +12,11 @@ module HealthCheck
           if permissions.nil? # backward compatible
             permissions = [:R, :W, :D]
           end
-          permissions.each do |permision|
+          permissions.each do |permission|
             begin
-              send(permision, bucket_name)
+              send(permission, bucket_name)
             rescue Exception => e
-              raise "bucket:#{bucket_name}, permission:#{permision} - #{e.message}"
+              raise "bucket:#{bucket_name}, permission:#{permission} - #{e.message}"
             end
           end
         end

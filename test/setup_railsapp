@@ -258,7 +258,7 @@ case "$actual_rails_version" in
      # Can't do this as a require as we may go back to testing JRuby
      echo Force sqlite to 1.3.13+ version for Rails 5.0 ...
      gem=sqlite3
-     sed -i.bak -e "s/^\([ ${TAB}]*gem[ ${TAB}]*[${QUOTES}]${gem}[${QUOTES}]\)\(.*\)$/\1, '~> 1.3.13' # overriden: \2/" Gemfile
+     sed -i.bak -e "s/^\([ ${TAB}]*gem[ ${TAB}]*[${QUOTES}]${gem}[${QUOTES}]\)\(.*\)$/\1, '~> 1.3.13' # overridden: \2/" Gemfile
   fi
   ;;
 esac
@@ -266,7 +266,7 @@ if egrep -q REQUIRED ${INITIAL_BUNDLE_GEMFILE} ; then
   sed -n "s/^[ ${TAB}]*gem[ ${TAB}]*[${QUOTES}]\([^${QUOTES}]*\)[${QUOTES}].*REQUIRED.*/\1/p" ${INITIAL_BUNDLE_GEMFILE} | while read gem
   do
     echo "Commenting out gem '$gem' line in Gemfile"
-    sed -i.bak -e "s/^\([ ${TAB}]*gem[ ${TAB}]*[${QUOTES}]${gem}[${QUOTES}].*\)$/# overriden by REQUIRED below: \1/" Gemfile
+    sed -i.bak -e "s/^\([ ${TAB}]*gem[ ${TAB}]*[${QUOTES}]${gem}[${QUOTES}].*\)$/# overridden by REQUIRED below: \1/" Gemfile
   done
   echo Adding Required gems
   egrep REQUIRED ${INITIAL_BUNDLE_GEMFILE} | tee -a Gemfile
